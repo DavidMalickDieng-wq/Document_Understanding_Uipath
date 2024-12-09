@@ -1,0 +1,466 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:npf="clr-namespace:NPOI.POIFS.FileSystem;assembly=NPOI" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:p2="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p5="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p6="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p8="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ugm="clr-namespace:UiPath.GoogleCloud.Models;assembly=UiPath.GoogleCloud" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.TaxonomyManagement</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Digitization</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.GoogleCloud.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft.Win32.SafeHandles</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Configuration.Assemblies</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.CodeDom.Compiler</x:String>
+      <x:String>System.Buffers</x:String>
+      <x:String>System.Buffers.Text</x:String>
+      <x:String>System.Buffers.Binary</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading.Tasks.Sources</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Unicode</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Security.Principal</x:String>
+      <x:String>System.Security.Permissions</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Runtime</x:String>
+      <x:String>System.Runtime.Remoting</x:String>
+      <x:String>System.Runtime.ExceptionServices</x:String>
+      <x:String>System.Runtime.ConstrainedExecution</x:String>
+      <x:String>System.Runtime.Versioning</x:String>
+      <x:String>System.Runtime.Loader</x:String>
+      <x:String>System.Runtime.Intrinsics</x:String>
+      <x:String>System.Runtime.Intrinsics.Wasm</x:String>
+      <x:String>System.Runtime.Intrinsics.Arm</x:String>
+      <x:String>System.Runtime.Intrinsics.X86</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.InteropServices.ObjectiveC</x:String>
+      <x:String>System.Runtime.InteropServices.Marshalling</x:String>
+      <x:String>System.Runtime.InteropServices.ComTypes</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>System.Resources</x:String>
+      <x:String>System.Reflection.Metadata</x:String>
+      <x:String>System.Reflection.Emit</x:String>
+      <x:String>System.IO.Enumeration</x:String>
+      <x:String>System.Diagnostics.SymbolStore</x:String>
+      <x:String>System.Diagnostics.Contracts</x:String>
+      <x:String>System.Diagnostics.CodeAnalysis</x:String>
+      <x:String>System.Diagnostics.Tracing</x:String>
+      <x:String>System.Collections.Concurrent</x:String>
+      <x:String>Internal</x:String>
+      <x:String>System.CodeDom</x:String>
+      <x:String>Microsoft.CSharp</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Linq.Expressions.Interpreter</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>UiPath.Workflow.Runtime</x:String>
+      <x:String>System.Activities.Tracking</x:String>
+      <x:String>System.Activities.Statements.Tracking</x:String>
+      <x:String>System.Activities.Runtime</x:String>
+      <x:String>System.Activities.Runtime.DurableInstancing</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.ParallelTracking</x:String>
+      <x:String>System.Activities.Hosting</x:String>
+      <x:String>System.Activities.Persistence</x:String>
+      <x:String>System.Activities.DurableInstancing</x:String>
+      <x:String>System.ComponentModel.Design.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>Microsoft.VisualBasic.FileIO</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.GoogleCloud.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>NPOI.POIFS.FileSystem</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Classification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Training</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Training</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>UiPath.SmartData.PositionBasedExtraction.Storage</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.ValidationStation</x:String>
+      <x:String>UiPath.DocumentUnderstanding.ML.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>UiPath.GoogleCloud</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.IO.Pipes</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Security.Principal.Windows</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.IO.MemoryMappedFiles</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Registry</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Threading.AccessControl</AssemblyReference>
+      <AssemblyReference>System.Threading</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks.Parallel</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Security.Claims</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.Pkcs</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.ProtectedData</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Resources.Writer</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.StackTrace</AssemblyReference>
+      <AssemblyReference>System.Collections.Concurrent</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.GoogleCloud.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.SmartData.PositionBasedExtraction</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="load taxonomy" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="912.6666666666666,2958" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ugm:GCPObject" Name="uploadedObject" />
+      <Variable x:TypeArguments="p8:DocumentTaxonomy" Name="TaxonomyVariable" />
+      <Variable x:TypeArguments="npf:DocumentOutputStream" Name="Document" />
+      <Variable x:TypeArguments="x:String" Name="RegistrationNumber" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="554,140" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_1" Taxonomy="[TaxonomyVariable]" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="554,2764.6666666666665" sap2010:WorkflowViewState.IdRef="RetryScope_6">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="512,2563.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Default="C:\Users\Administrator\Documents\DU_Challenge\taxes\02-damage-report.pdf" Name="FilePath" />
+              <Variable x:TypeArguments="x:String" Name="Text_Document" />
+              <Variable x:TypeArguments="p3:Document" Name="DOMMY" />
+              <Variable x:TypeArguments="p7:ClassificationResult[]" Name="Result_Classification" />
+              <Variable x:TypeArguments="p7:ExtractionResult" Name="Result_Extracted" />
+              <Variable x:TypeArguments="p7:ExtractionResult" Name="Validated_Extracted_Result" />
+              <Variable x:TypeArguments="sd2:DataSet" Name="dataset" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <p:DigitizeDocument ApplyOcrMigrated="True" ApplyOcrOnPdf="Auto" DegreeOfParallelism="-1" DetectCheckboxes="True" DisplayName="Digitize Document" DocumentObjectModel="[DOMMY]" DocumentPath="[FilePath]" DocumentText="[Text_Document]" ForceApplyOCR="False" sap:VirtualizedContainerService.HintSize="478,339.3333333333333" sap2010:WorkflowViewState.IdRef="DigitizeDocument_4">
+              <p:DigitizeDocument.OCREngine>
+                <ActivityFunc x:TypeArguments="sd:Image, x:String, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))" Argument1="{x:Reference __ReferenceID0}" Argument2="{x:Reference __ReferenceID1}">
+                  <p1:UiPathDocumentOCR Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="eyrDaVQCa4mdumEbx7jnlRW8euVhYq9bEjZzYv2Ms3irLOcSJ3DddUowpEXaSniL9UKnWXohYgPKUIDpMR9iOg==" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,25.333333333333332" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_4" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000">
+                    <p1:UiPathDocumentOCR.Image>
+                      <InArgument x:TypeArguments="sd:Image">
+                        <DelegateArgumentValue x:TypeArguments="sd:Image" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_51">
+                          <DelegateInArgument x:TypeArguments="sd:Image" x:Name="__ReferenceID0" Name="Image" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p1:UiPathDocumentOCR.Image>
+                    <p1:UiPathDocumentOCR.PredictionId>
+                      <InArgument x:TypeArguments="x:String">
+                        <DelegateArgumentValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="DelegateArgumentValue`1_52">
+                          <DelegateInArgument x:TypeArguments="x:String" x:Name="__ReferenceID1" Name="PredictionId" />
+                        </DelegateArgumentValue>
+                      </InArgument>
+                    </p1:UiPathDocumentOCR.PredictionId>
+                  </p1:UiPathDocumentOCR>
+                </ActivityFunc>
+              </p:DigitizeDocument.OCREngine>
+            </p:DigitizeDocument>
+            <p2:ClassifyDocumentScope ClassificationResults="[Result_Classification]" DisplayName="Classify Document Scope" DocumentObjectModel="[DOMMY]" DocumentPath="[FilePath]" DocumentText="[Text_Document]" sap:VirtualizedContainerService.HintSize="478,582" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_5" Taxonomy="[TaxonomyVariable]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI18708721ed304830bb17bf56cd0c5bdd&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;TaxDocuments.NoCategory.Form1040-X&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;VehicleReports.NoCategory.VehicleDamageReportForm&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UI18708721ed304830bb17bf56cd0c5bdd&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{&quot;UI18708721ed304830bb17bf56cd0c5bdd&quot;:[]}}">
+              <p2:ClassifyDocumentScope.Classifiers>
+                <p2:IntelligentKeywordClassifier LearningData="{x:Null}" TimeoutMs="{x:Null}" ApiKey="eyrDaVQCa4mdumEbx7jnlRW8euVhYq9bEjZzYv2Ms3irLOcSJ3DddUowpEXaSniL9UKnWXohYgPKUIDpMR9iOg==" DisplayName="Intelligent Keyword Classifier" Endpoint="https://du.uipath.com/svc/intelligentkeywords" sap:VirtualizedContainerService.HintSize="283.3333333333333,216" sap2010:WorkflowViewState.IdRef="IntelligentKeywordClassifier_5" LearningFilePath="Keywords.json" PerformDocumentSplitting="True" PersistenceId="UI18708721ed304830bb17bf56cd0c5bdd" SendDocumentsForAlgorithmImprovements="True" UsePageNumbers="False">
+                  <p2:IntelligentKeywordClassifier.ClassifierResult>
+                    <OutArgument x:TypeArguments="p4:ClassifierResult">
+                      <DelegateArgumentReference x:TypeArguments="p4:ClassifierResult">
+                        <DelegateOutArgument x:TypeArguments="p4:ClassifierResult" Name="ClassifierResult" />
+                      </DelegateArgumentReference>
+                    </OutArgument>
+                  </p2:IntelligentKeywordClassifier.ClassifierResult>
+                  <p2:IntelligentKeywordClassifier.DocumentObjectModel>
+                    <InArgument x:TypeArguments="p3:Document">
+                      <DelegateArgumentValue x:TypeArguments="p3:Document">
+                        <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:IntelligentKeywordClassifier.DocumentObjectModel>
+                  <p2:IntelligentKeywordClassifier.DocumentPath>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:IntelligentKeywordClassifier.DocumentPath>
+                  <p2:IntelligentKeywordClassifier.DocumentText>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:IntelligentKeywordClassifier.DocumentText>
+                  <p2:IntelligentKeywordClassifier.DocumentTypes>
+                    <InArgument x:TypeArguments="p4:ClassifierDocumentType[]">
+                      <DelegateArgumentValue x:TypeArguments="p4:ClassifierDocumentType[]">
+                        <DelegateInArgument x:TypeArguments="p4:ClassifierDocumentType[]" Name="DocumentTypes" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:IntelligentKeywordClassifier.DocumentTypes>
+                  <p2:IntelligentKeywordClassifier.PredictionId>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p2:IntelligentKeywordClassifier.PredictionId>
+                </p2:IntelligentKeywordClassifier>
+              </p2:ClassifyDocumentScope.Classifiers>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p2:ClassifyDocumentScope>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="478,118.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[Result_Classification(0).DocumentTypeId]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:MessageBox>
+            <p5:DataExtractionScope AvailableAssetPaths="{x:Array Type=x:String}" DocumentTypeId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ApplyGenerativeValidation="False" ClassificationResult="[Result_Classification(0)]" DisplayName="Data Extraction Scope" DocumentObjectModel="[DOMMY]" DocumentPath="[FilePath]" DocumentText="[Text_Document]" ExtractionResult="[Result_Extracted]" FormatValuesIfPossible="True" GenerativeValidationConfidenceThreshold="99" sap:VirtualizedContainerService.HintSize="478,532" sap2010:WorkflowViewState.IdRef="DataExtractionScope_5" Taxonomy="[TaxonomyVariable]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UIb1f6d6ec6f5943eaad2edfa8f010ac1f&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;TaxDocuments.NoCategory.Form1040-X&quot;:{&quot;FieldMappings&quot;:{&quot;TaxDocuments.NoCategory.Form1040-X.Return2019&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Return2019&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.Return2018&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Return2018&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.Return2017&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Return2017&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.Return2016&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Return2016&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.FirstName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FirstName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.LastName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.LastName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.SocialSecurityNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SocialSecurityNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.SpousesFirstName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SpousesFirstName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.SpousesLastName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SpousesLastName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.SpousesSocialSecurityNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SpousesSocialSecurityNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.AddressLine1&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.AddressLine1&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.ApartmentNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.ApartmentNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.PhoneNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.PhoneNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.CityTownZip&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.CityTownZip&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusSingle&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusSingle&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusMarriedFilingJointly&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusMarriedFilingJointly&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusMarriedFilingSeparately&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusMarriedFilingSeparately&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusQualifyingWidower&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusQualifyingWidower&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusHeadOfHousehold&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusHeadOfHousehold&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;TaxDocuments.NoCategory.Form1040-X.Dependents&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Dependents&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.FirstLastName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.FirstLastName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.SocialSecurityNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.SocialSecurityNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.RelationshipToYou&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.RelationshipToYou&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.ChildTaxCredit&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.ChildTaxCredit&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.CreditForOtherDependents&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.CreditForOtherDependents&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.Signature&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.Signature&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.Date&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Dependents.Date&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TaxDocuments.NoCategory.Form1040-X.SpousesSignature&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SpousesSignature&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false},&quot;TaxDocuments.NoCategory.Form1040-X.SpousesDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SpousesDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:false}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;VehicleReports.NoCategory.VehicleDamageReportForm&quot;:{&quot;FieldMappings&quot;:{&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Registration-number&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Registration-number&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Inspector-name&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Inspector-name&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Vehicle-license-number&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Vehicle-license-number&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Driving-license-number&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Driving-license-number&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Cost-of-damage&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Cost-of-damage&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UIb1f6d6ec6f5943eaad2edfa8f010ac1f&quot;:&quot;0&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UIb1f6d6ec6f5943eaad2edfa8f010ac1f&quot;:[]}}">
+              <p5:DataExtractionScope.Extractors>
+                <p5:FormExtractor SerializedSignatureFields="{x:Null}" ApiKey="eyrDaVQCa4mdumEbx7jnlRW8euVhYq9bEjZzYv2Ms3irLOcSJ3DddUowpEXaSniL9UKnWXohYgPKUIDpMR9iOg==" DisplayName="Form Extractor" Endpoint="https://du.uipath.com/svc/formextractor" sap:VirtualizedContainerService.HintSize="282,166" sap2010:WorkflowViewState.IdRef="FormExtractor_5" MinOverlapPercentage="65" PersistenceId="UIb1f6d6ec6f5943eaad2edfa8f010ac1f" SendDocumentsForAlgorithmImprovements="True" SerializedSettings="{}{}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;TaxDocuments.NoCategory.Form1040-X&quot;,&quot;FormId&quot;:&quot;d097cbd9&quot;,&quot;FormName&quot;:&quot;DavidForms&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:-0.3,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;1040-X&quot;,&quot;Box&quot;:[48.81,49.07,70.14,18.14]},{&quot;Text&quot;:&quot;Department&quot;,&quot;Box&quot;:[49.87,216.83,35.74,7.2]},{&quot;Text&quot;:&quot;of&quot;,&quot;Box&quot;:[50.14,253.91,6.67,5.87]},{&quot;Text&quot;:&quot;the&quot;,&quot;Box&quot;:[50.14,261.37,10.13,5.87]},{&quot;Text&quot;:&quot;Treasury-Internal&quot;,&quot;Box&quot;:[50.14,272.84,55.74,7.2]},{&quot;Text&quot;:&quot;Revenue&quot;,&quot;Box&quot;:[50.41,329.92,26.4,6.13]},{&quot;Text&quot;:&quot;Service&quot;,&quot;Box&quot;:[50.67,357.39,23.2,6.13]},{&quot;Text&quot;:&quot;Amended&quot;,&quot;Box&quot;:[59.21,165.63,56.54,10.67]},{&quot;Text&quot;:&quot;U.S.&quot;,&quot;Box&quot;:[59.48,226.17,24.54,10.67]},{&quot;Text&quot;:&quot;Individual&quot;,&quot;Box&quot;:[59.48,255.24,56.81,10.4]},{&quot;Text&quot;:&quot;Income&quot;,&quot;Box&quot;:[59.74,316.58,43.74,10.67]},{&quot;Text&quot;:&quot;Tax&quot;,&quot;Box&quot;:[60.01,363.52,22.67,10.67]},{&quot;Text&quot;:&quot;Return&quot;,&quot;Box&quot;:[60.28,389.93,40.27,10.4]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Return2019&quot;,&quot;Box&quot;:[83.8729,170.8331,37.5627,12.8639]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Return2018&quot;,&quot;Box&quot;:[84.902,215.085,36.5336,10.8057]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Return2017&quot;,&quot;Box&quot;:[84.902,256.2496,33.4462,10.8057]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.Return2016&quot;,&quot;Box&quot;:[85.9311,296.8997,35.5045,9.7766]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FirstName&quot;,&quot;Box&quot;:[120.921,93.6495,37.5627,8.2329]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.LastName&quot;,&quot;Box&quot;:[119.3773,324.1712,32.4171,10.2911]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SocialSecurityNumber&quot;,&quot;Box&quot;:[120.4065,434.2865,119.8919,8.7475]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SpousesFirstName&quot;,&quot;Box&quot;:[138.9305,39.6209,224.3471,12.8639]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SpousesLastName&quot;,&quot;Box&quot;:[140.4742,277.861,138.416,12.8639]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SpousesSocialSecurityNumber&quot;,&quot;Box&quot;:[140.4742,433.772,121.4356,13.8931]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.AddressLine1&quot;,&quot;Box&quot;:[162.6002,37.5627,94.6786,12.8639]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.ApartmentNumber&quot;,&quot;Box&quot;:[162.0856,371.5105,59.1741,15.4367]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.PhoneNumber&quot;,&quot;Box&quot;:[165.6875,463.6163,58.6596,10.2911]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.CityTownZip&quot;,&quot;Box&quot;:[186.7844,34.4754,117.3191,11.8348]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusSingle&quot;,&quot;Box&quot;:[254.706,32.4171,45.2811,11.3203]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusMarriedFilingJointly&quot;,&quot;Box&quot;:[256.2496,82.8438,89.533,10.8057]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusMarriedFilingSeparately&quot;,&quot;Box&quot;:[253.6768,178.5514,127.6103,14.9222]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusQualifyingWidower&quot;,&quot;Box&quot;:[254.706,317.9965,116.8046,14.4076]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.FilingStatusHeadOfHousehold&quot;,&quot;Box&quot;:[258.8224,440.9758,116.29,9.7766]}],&quot;Tables&quot;:[]},{&quot;Page&quot;:1,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Exemptions&quot;,&quot;Box&quot;:[116.82,88.01,54.14,9.87]},{&quot;Text&quot;:&quot;and&quot;,&quot;Box&quot;:[116.82,144.29,17.6,8.0]},{&quot;Text&quot;:&quot;Dependents&quot;,&quot;Box&quot;:[116.55,164.29,55.21,9.87]},{&quot;Text&quot;:&quot;Page&quot;,&quot;Box&quot;:[106.42,533.95,15.74,7.2]},{&quot;Text&quot;:&quot;2&quot;,&quot;Box&quot;:[104.55,550.75,5.87,8.0]},{&quot;Text&quot;:&quot;Complete&quot;,&quot;Box&quot;:[130.42,40.01,37.87,9.33]},{&quot;Text&quot;:&quot;this&quot;,&quot;Box&quot;:[130.69,80.01,14.67,7.47]},{&quot;Text&quot;:&quot;part&quot;,&quot;Box&quot;:[130.69,97.08,16.0,9.07]},{&quot;Text&quot;:&quot;only&quot;,&quot;Box&quot;:[130.42,115.49,17.87,9.07]},{&quot;Text&quot;:&quot;if&quot;,&quot;Box&quot;:[129.89,135.75,5.07,8.0]},{&quot;Text&quot;:&quot;any&quot;,&quot;Box&quot;:[131.49,142.96,14.4,8.27]},{&quot;Text&quot;:&quot;information&quot;,&quot;Box&quot;:[129.89,159.76,43.47,7.73]},{&quot;Text&quot;:&quot;relating&quot;,&quot;Box&quot;:[129.89,205.9,29.07,9.6]},{&quot;Text&quot;:&quot;to&quot;,&quot;Box&quot;:[130.15,236.84,8.53,7.2]},{&quot;Text&quot;:&quot;exemptions&quot;,&quot;Box&quot;:[129.62,247.77,45.34,9.6]},{&quot;Text&quot;:&quot;24&quot;,&quot;Box&quot;:[212.03,43.74,10.4,7.47]},{&quot;Text&quot;:&quot;Yourself&quot;,&quot;Box&quot;:[212.03,66.94,32.54,7.2]},{&quot;Text&quot;:&quot;and&quot;,&quot;Box&quot;:[211.77,104.82,14.94,7.47]},{&quot;Text&quot;:&quot;spouse.&quot;,&quot;Box&quot;:[213.37,125.62,30.67,7.47]},{&quot;Text&quot;:&quot;Caution:&quot;,&quot;Box&quot;:[211.77,162.69,34.41,7.47]},{&quot;Text&quot;:&quot;If&quot;,&quot;Box&quot;:[211.5,203.23,5.6,7.47]},{&quot;Text&quot;:&quot;someone&quot;,&quot;Box&quot;:[213.37,213.9,36.27,5.87]},{&quot;Text&quot;:&quot;can&quot;,&quot;Box&quot;:[213.37,255.77,14.14,5.87]},{&quot;Text&quot;:&quot;claim&quot;,&quot;Box&quot;:[211.77,275.78,20.54,7.47]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SpousesSignature&quot;,&quot;Box&quot;:[684.3615,41.6792,94.6786,13.3785]},{&quot;Field&quot;:&quot;TaxDocuments.NoCategory.Form1040-X.SpousesDate&quot;,&quot;Box&quot;:[683.3323,233.0945,59.1741,14.4076]}],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}},{&quot;DocumentTypeId&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm&quot;,&quot;FormId&quot;:&quot;ab022d38&quot;,&quot;FormName&quot;:&quot;Vehicle&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,596.0,843.0],&quot;SkewAngle&quot;:-0.1,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Vehicle&quot;,&quot;Box&quot;:[93.61,170.41,64.27,15.47]},{&quot;Text&quot;:&quot;Damage&quot;,&quot;Box&quot;:[94.14,239.75,70.14,18.4]},{&quot;Text&quot;:&quot;Report&quot;,&quot;Box&quot;:[93.87,314.69,58.67,18.4]},{&quot;Text&quot;:&quot;Form&quot;,&quot;Box&quot;:[93.87,378.16,44.27,15.2]},{&quot;Text&quot;:&quot;General&quot;,&quot;Box&quot;:[161.35,71.47,52.54,12.0]},{&quot;Text&quot;:&quot;Information&quot;,&quot;Box&quot;:[161.35,127.48,77.34,12.0]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Registration-number&quot;,&quot;Box&quot;:[199.9133,186.6537,60.178,17.3394]},{&quot;Field&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Inspector-name&quot;,&quot;Box&quot;:[254.9914,177.474,67.3177,20.3993]},{&quot;Field&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Vehicle-license-number&quot;,&quot;Box&quot;:[415.126,205.0131,53.0382,14.2795]},{&quot;Field&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Driving-license-number&quot;,&quot;Box&quot;:[429.4056,382.4871,101.9966,21.4193]},{&quot;Field&quot;:&quot;VehicleReports.NoCategory.VehicleDamageReportForm.Cost-of-damage&quot;,&quot;Box&quot;:[704.7963,158.0947,44.8785,22.4392]}],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}}]" Timeout="100000">
+                  <p5:FormExtractor.DocumentBounds>
+                    <InArgument x:TypeArguments="p7:ResultsDocumentBounds">
+                      <DelegateArgumentValue x:TypeArguments="p7:ResultsDocumentBounds">
+                        <DelegateInArgument x:TypeArguments="p7:ResultsDocumentBounds" Name="DocumentBounds" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p5:FormExtractor.DocumentBounds>
+                  <p5:FormExtractor.DocumentObjectModel>
+                    <InArgument x:TypeArguments="p3:Document">
+                      <DelegateArgumentValue x:TypeArguments="p3:Document">
+                        <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p5:FormExtractor.DocumentObjectModel>
+                  <p5:FormExtractor.DocumentPath>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p5:FormExtractor.DocumentPath>
+                  <p5:FormExtractor.DocumentText>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p5:FormExtractor.DocumentText>
+                  <p5:FormExtractor.ExtractorDocumentType>
+                    <InArgument x:TypeArguments="p6:ExtractorDocumentType">
+                      <DelegateArgumentValue x:TypeArguments="p6:ExtractorDocumentType">
+                        <DelegateInArgument x:TypeArguments="p6:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p5:FormExtractor.ExtractorDocumentType>
+                  <p5:FormExtractor.ExtractorResult>
+                    <OutArgument x:TypeArguments="p6:ExtractorResult">
+                      <DelegateArgumentReference x:TypeArguments="p6:ExtractorResult">
+                        <DelegateOutArgument x:TypeArguments="p6:ExtractorResult" Name="ExtractorResult" />
+                      </DelegateArgumentReference>
+                    </OutArgument>
+                  </p5:FormExtractor.ExtractorResult>
+                  <p5:FormExtractor.PredictionId>
+                    <InArgument x:TypeArguments="x:String">
+                      <DelegateArgumentValue x:TypeArguments="x:String">
+                        <DelegateInArgument x:TypeArguments="x:String" Name="PredictionId" />
+                      </DelegateArgumentValue>
+                    </InArgument>
+                  </p5:FormExtractor.PredictionId>
+                </p5:FormExtractor>
+              </p5:DataExtractionScope.Extractors>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p5:DataExtractionScope>
+            <p:PresentValidationStation FieldsValidationConfidence="{x:Null}" AutomaticExtractionResults="[Result_Extracted]" DisplayName="Present Validation Station" DocumentObjectModel="[DOMMY]" DocumentPath="[FilePath]" DocumentText="[Text_Document]" sap:VirtualizedContainerService.HintSize="478,414" sap2010:WorkflowViewState.IdRef="PresentValidationStation_5" ShowOnlyRelevantPageRange="False" Taxonomy="[TaxonomyVariable]" ValidatedExtractionResults="[Validated_Extracted_Result]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:PresentValidationStation>
+            <p5:ExportExtractionResults DataSet="[dataset]" DisplayName="Export Extraction Results" ExtractionResult="[Validated_Extracted_Result]" sap:VirtualizedContainerService.HintSize="478,214" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_1" IncludeConfidence="False" IncludeOCRConfidence="False" />
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="478,303.3333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[dataset.Tables]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,164.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd2:DataTable" Name="textOPT" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:OutputDataTable Text="{x:Null}" DataTable="[textOPT]" DisplayName="Output Data Table as Text" sap:VirtualizedContainerService.HintSize="382,104.66666666666667" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:RetryScope>
+  </Sequence>
+</Activity>
